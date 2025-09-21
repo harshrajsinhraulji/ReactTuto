@@ -1,9 +1,11 @@
 import './App.css';
+import Navbar from './components/Navbar.js'; // Import the Navbar component
 
 function App() {
   return (
     <div className="App">
-      <h1>Harshrajsinh Raulji's Portfolio</h1>
+      <Navbar /> {/* Use the Navbar component here */}
+      {/* The rest of your page sections will go below this */}
     </div>
   );
 }
