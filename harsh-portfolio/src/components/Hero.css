@@ -1,0 +1,49 @@
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+  min-height: 90vh; /* Takes up most of the viewport height */
+  background-color: #F7FAFC; /* Light gray background */
+}
+
+.hero-content {
+  max-width: 600px;
+  margin-right: 2rem;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  color: #2D3748; /* Dark Charcoal */
+  margin-bottom: 1rem;
+}
+
+.hero-tagline {
+  font-size: 1.25rem;
+  color: #4A5568; /* A slightly lighter gray */
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.hero-button {
+  background-color: #4299E1; /* Cool Blue */
+  color: #FFFFFF;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #3182CE; /* A darker blue */
+}
+
+/* This is a temporary placeholder for your image */
+.hero-image-placeholder {
+  width: 350px;
+  height: 350px;
+  background-color: #E2E8F0; /* Placeholder color */
+  border-radius: 50%; /* Makes it a circle */
+}
