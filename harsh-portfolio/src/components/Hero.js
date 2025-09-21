@@ -1,6 +1,7 @@
 import React from 'react';
 import './Hero.css';
-// import profilePic from '../assets/your-photo.jpg'; // We will add your photo in the next step
+// Make sure this path and filename are correct for your photo
+import profilePic from '../assets/profile-photo.png'; 
 
 const Hero = () => {
   return (
@@ -13,8 +14,7 @@ const Hero = () => {
         <a href="#projects" className="hero-button">View My Work</a>
       </div>
       <div className="hero-image-container">
-        {/* <img src={profilePic} alt="Harshrajsinh Raulji" className="hero-image"/> */}
-        <div className="hero-image-placeholder"></div> {/* Placeholder for now */}
+        <img src={profilePic} alt="Harshrajsinh Raulji" className="hero-image"/>
       </div>
     </section>
   );

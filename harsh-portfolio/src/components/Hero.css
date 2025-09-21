@@ -40,10 +40,16 @@
   background-color: #3182CE; /* A darker blue */
 }
 
-/* This is a temporary placeholder for your image */
-.hero-image-placeholder {
+.hero-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image {
   width: 350px;
   height: 350px;
-  background-color: #E2E8F0; /* Placeholder color */
-  border-radius: 50%; /* Makes it a circle */
+  border-radius: 50%; /* Makes the image a circle */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
