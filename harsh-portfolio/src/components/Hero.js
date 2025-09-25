@@ -62,7 +62,18 @@ const Hero = ({ onNameClick }) => {
       </div>
       <div className="hero-image-container">
         <Tilt glareEnable={true} glareMaxOpacity={0.18} glareColor="#60a5fa" glarePosition="all" scale={1.07} transitionSpeed={1800} tiltMaxAngleX={18} tiltMaxAngleY={18} className="hero-tilt">
-          <img src={profilePic} alt="Harshrajsinh Raulji" className="hero-image"/>
+          <picture>
+            <source srcSet={require('../assets/profile-photo.webp')} type="image/webp" />
+            <img
+              src={profilePic}
+              srcSet={`${profilePic} 1x, ${profilePic.replace('.png', '@2x.png')} 2x`}
+              alt="Harshrajsinh Raulji"
+              className="hero-image"
+              width="240"
+              height="240"
+              loading="lazy"
+            />
+          </picture>
         </Tilt>
       </div>
     </section>
