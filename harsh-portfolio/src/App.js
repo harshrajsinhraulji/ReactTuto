@@ -1,13 +1,15 @@
 import './App.css';
-import Navbar from './components/Navbar.js';
-import Hero from './components/Hero.js';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Projects from './components/Projects';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <Hero />
-      {/* The rest of your page sections will go below this */}
+      <Projects />
+      {/* The About, Skills, and Contact sections will go here later */}
     </div>
   );
 }
