@@ -1,7 +1,5 @@
 import React from 'react';
-import { FaDownload } from 'react-icons/fa';
-// 1. Uncommented the import statement. Assumes your resume is in 'src/assets'.
-import resumePDF from '../assets/Harshrajsinh_Raulji_Resume.pdf'; 
+
 import './About.css';
 
 const About = () => {
@@ -19,11 +17,7 @@ const About = () => {
           <p>
             My goal is to leverage my skills in both backend and front-end development to build robust, scalable, and user-friendly applications.
           </p>
-          {/* 2. Updated the href to use the imported PDF file. */}
-          <a href={resumePDF} download="Harshrajsinh_Raulji_Resume.pdf" className="resume-button">
-            <FaDownload />
-            Download Resume
-          </a>
+
         </div>
       </div>
     </section>
