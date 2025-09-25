@@ -153,4 +153,47 @@
   align-items: center;
   justify-content: center;
 }
-...existing code...
+.hero-image {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--white);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.13);
+  background: var(--white);
+}
+.hero-image-container::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  height: 110%;
+  background: radial-gradient(circle, #93c5fd 0%, var(--primary-blue) 100%);
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(48px);
+  opacity: 0.38;
+  animation: pulse 4s infinite ease-in-out;
+}
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.07); }
+}
+@media (max-width: 900px) {
+  .hero-container {
+    flex-direction: column;
+    padding: 4rem 2%;
+    min-height: 70vh;
+  }
+  .hero-content {
+    margin-right: 0;
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+  .hero-image {
+    width: 220px;
+    height: 220px;
+  }
+}
