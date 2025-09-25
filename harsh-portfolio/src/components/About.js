@@ -2,6 +2,7 @@ import React from 'react';
 
 import './About.css';
 
+
 const About = () => {
   return (
     <section id="about" className="about-section">
@@ -9,15 +10,36 @@ const About = () => {
       <div className="about-content">
         <div className="about-text">
           <p>
-            Hello! I'm Harshrajsinh, a Computer Engineer with a strong foundation in Java, Data Structures, and SQL. My journey into technology began with a fascination for how software solves real-world problems, which led me to build practical applications like a full-featured banking system using core Java and JDBC.
+            <strong>Hi, I'm Harshrajsinh Raulji!</strong> <br />
+            I'm a <span className="about-badge">Computer Engineer</span> passionate about building robust backend systems and seamless user experiences. My journey began with a fascination for how software solves real-world problems, leading me to create projects like a full-featured <span className="about-badge">Banking System</span> in Java and JDBC.
           </p>
           <p>
-            While I have a solid background in backend fundamentals, I am equally passionate about creating intuitive and dynamic user experiences, which I am actively exploring through React. I thrive on learning new technologies and methodologies, from data analysis with Python to the fundamentals of game development.
+            <strong>What drives me?</strong> <br />
+            <ul className="about-list">
+              <li>🔍 <b>Curiosity</b> for new tech and frameworks (React, Python, game dev, and more)</li>
+              <li>🛠️ <b>Problem-solving</b>—I love debugging and optimizing code</li>
+              <li>🤝 <b>Collaboration</b>—I thrive in team environments and enjoy sharing knowledge</li>
+              <li>🚀 <b>Continuous learning</b>—from AI/ML basics to cloud and cybersecurity</li>
+            </ul>
           </p>
           <p>
-            My goal is to leverage my skills in both backend and front-end development to build robust, scalable, and user-friendly applications.
+            <strong>Fun facts & soft skills:</strong>
+            <ul className="about-list">
+              <li>🌏 Multilingual: Fluent in English, Hindi, and Gujarati</li>
+              <li>🎮 Hobbyist game developer & chess player</li>
+              <li>🏆 Hackathon participant & coding contest enthusiast</li>
+              <li>💡 Quick to adapt, creative, and detail-oriented</li>
+            </ul>
           </p>
-
+          <div className="about-badges">
+            <span className="about-badge">Java</span>
+            <span className="about-badge">React</span>
+            <span className="about-badge">SQL</span>
+            <span className="about-badge">Python</span>
+            <span className="about-badge">OOP</span>
+            <span className="about-badge">Teamwork</span>
+            <span className="about-badge">Problem Solving</span>
+          </div>
         </div>
       </div>
     </section>
