@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-scroll';
 import './Hero.css';
 import profilePic from '../assets/profile-photo.png';
+import Tilt from 'react-parallax-tilt';
 
 const dynamicTitles = [
   'Java Backend Developer',
@@ -56,8 +57,9 @@ const Hero = ({ onNameClick }) => {
         </Link>
       </div>
       <div className="hero-image-container">
-        <img src={profilePic} alt="Harshrajsinh Raulji" className="hero-image"/>
-        {/* 3D/animated element can be added here in the future */}
+        <Tilt glareEnable={true} glareMaxOpacity={0.18} glareColor="#60a5fa" glarePosition="all" scale={1.07} transitionSpeed={1800} tiltMaxAngleX={18} tiltMaxAngleY={18} className="hero-tilt">
+          <img src={profilePic} alt="Harshrajsinh Raulji" className="hero-image"/>
+        </Tilt>
       </div>
     </section>
   );
