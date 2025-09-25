@@ -1,7 +1,15 @@
 
+/* ...existing code... */
 .projects-section {
   padding: 60px 0 40px 0;
   background: var(--background);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(.4,1.2,.6,1), transform 0.8s cubic-bezier(.4,1.2,.6,1);
+}
+.projects-section.visible {
+  opacity: 1;
+  transform: none;
 }
 
 .projects-title {
@@ -31,6 +39,7 @@
 }
 
 /* Minimal project card */
+/* ...existing code... */
 .project-card-minimal {
   min-width: 320px;
   max-width: 340px;
@@ -48,10 +57,11 @@
   cursor: pointer;
   border: 1.5px solid transparent;
 }
-.project-card-minimal:hover {
-  transform: translateY(-8px) scale(1.04) rotate(-1deg);
+.hover-pop:hover, .hover-pop:focus {
+  transform: translateY(-8px) scale(1.07) rotate(-1deg);
   box-shadow: 0 8px 32px rgba(0,0,0,0.13);
   border: 1.5px solid var(--accent);
+  z-index: 2;
 }
 
 .project-card-minimal-header {

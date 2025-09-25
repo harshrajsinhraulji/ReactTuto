@@ -1,7 +1,15 @@
 
+/* ...existing code... */
 .skills-section {
   padding: 5rem 5% 6rem 5%;
   background: linear-gradient(120deg, var(--light-gray) 60%, #e0e7ff 100%);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(.4,1.2,.6,1), transform 0.8s cubic-bezier(.4,1.2,.6,1);
+}
+.skills-section.visible {
+  opacity: 1;
+  transform: none;
 }
 .skills-title {
   margin-bottom: 3.5rem;
@@ -13,6 +21,7 @@
   max-width: 1100px;
   margin: 0 auto;
 }
+/* ...existing code... */
 .skill-card {
   background: var(--white);
   border-radius: 16px;
@@ -23,6 +32,11 @@
   align-items: flex-start;
   min-height: 220px;
   animation: skillFadeIn 0.7s cubic-bezier(.4,1.2,.6,1) backwards;
+}
+.hover-pop:hover, .hover-pop:focus {
+  box-shadow: 0 8px 32px rgba(59,130,246,0.13);
+  transform: translateY(-6px) scale(1.07);
+  z-index: 2;
 }
 .skill-card-header {
   display: flex;

@@ -73,11 +73,11 @@ const skillsData = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="skills-section">
+  <section id="skills" className="skills-section fade-in-section">
       <h2 className="skills-title">Tech Stack & Skills</h2>
       <div className="skills-grid">
         {skillsData.map((skill, idx) => (
-          <div className="skill-card" key={idx} style={{animationDelay: `${0.1 * idx}s`}}>
+          <div className="skill-card hover-pop" key={idx} style={{animationDelay: `${0.1 * idx}s`}}>
             <div className="skill-card-header">
               <span className="skill-card-icon" style={{color: skill.color}}>{skill.icon}</span>
               <span className="skill-card-title">{skill.category}</span>

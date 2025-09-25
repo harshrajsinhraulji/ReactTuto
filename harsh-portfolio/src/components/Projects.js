@@ -22,14 +22,14 @@ const Projects = () => {
   }, []);
 
   return (
-    <section id="projects" className="projects-section">
+  <section id="projects" className="projects-section fade-in-section">
       <h2 className="projects-title">Featured Projects</h2>
       <div className="projects-scroll">
         {repos.length === 0 ? (
           <p style={{ textAlign: 'center', width: '100%' }}>Loading repositories...</p>
         ) : (
           repos.map(repo => (
-            <div className="project-card-minimal" key={repo.id}>
+            <div className="project-card-minimal hover-pop" key={repo.id}>
               <div className="project-card-minimal-header">
                 <FaFolder className="project-icon-minimal" />
                 <span className="project-title-minimal">{repo.name}</span>

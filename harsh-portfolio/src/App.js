@@ -8,14 +8,29 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 
 function App() {
   const [aboutOpen, setAboutOpen] = useState(false);
 
-  // Pass handler to Hero for name click
+  // Fade-in on scroll for sections
+  useEffect(() => {
+    const fadeSections = document.querySelectorAll('.fade-in-section');
+    const onScroll = () => {
+      fadeSections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 80) {
+          sec.classList.add('visible');
+        }
+      });
+    };
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <div className="App">
       <Navbar />
