@@ -1,5 +1,6 @@
+
 import React, { useState, useEffect } from 'react';
-import { FaGithub, FaFolder } from 'react-icons/fa'; // Import icons
+import { FaGithub, FaFolder, FaCodeBranch, FaStar } from 'react-icons/fa';
 import './Projects.css';
 
 const Projects = () => {
@@ -22,28 +23,29 @@ const Projects = () => {
 
   return (
     <section id="projects" className="projects-section">
-      <h2 className="projects-title">Latest from GitHub</h2>
-      <div className="projects-grid">
+      <h2 className="projects-title">Featured Projects</h2>
+      <div className="projects-scroll">
         {repos.length === 0 ? (
-          <p style={{ textAlign: 'center' }}>Loading repositories...</p>
+          <p style={{ textAlign: 'center', width: '100%' }}>Loading repositories...</p>
         ) : (
           repos.map(repo => (
-            <div className="project-card" key={repo.id}>
-              <div className="project-card-header">
-                <FaFolder className="project-icon" />
-                <h3>{repo.name}</h3>
+            <div className="project-card-minimal" key={repo.id}>
+              <div className="project-card-minimal-header">
+                <FaFolder className="project-icon-minimal" />
+                <span className="project-title-minimal">{repo.name}</span>
               </div>
-              <p className="project-description">{repo.description || "No description provided."}</p>
-              {/* This footer will stick to the bottom */}
-              <div className="project-card-footer">
-                <div className="project-tags">
-                  {repo.language && <span className="tag">{repo.language}</span>}
-                </div>
+              <div className="project-desc-minimal">{repo.description || "No description provided."}</div>
+              <div className="project-meta-minimal">
+                {repo.language && <span className="project-tag-minimal">{repo.language}</span>}
+                <span className="project-meta-icons">
+                  <FaStar title="Stars" /> {repo.stargazers_count} &nbsp;
+                  <FaCodeBranch title="Forks" /> {repo.forks_count}
+                </span>
                 <a 
                   href={repo.html_url} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="project-github-link" 
+                  className="project-github-link-minimal" 
                   aria-label={`View ${repo.name} on GitHub`}
                 >
                   <FaGithub />
