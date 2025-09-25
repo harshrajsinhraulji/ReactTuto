@@ -32,14 +32,17 @@ const Hero = ({ onNameClick }) => {
       <div className="hero-content">
         <h1 className="hero-title">
           Hi, I'm{' '}
-          <button
-            className="hero-highlight hero-name-btn"
+          <span
+            className="hero-highlight hero-name-fancy"
             onClick={onNameClick}
             aria-label="Open About"
             tabIndex={0}
+            role="button"
+            style={{cursor: 'pointer', fontWeight: 800, fontSize: 'inherit'}}
+            title="Click to know more about me!"
           >
             Harshrajsinh Raulji
-          </button>
+          </span>
         </h1>
         <div className="hero-dynamic-subtitle">
           <span ref={subtitleRef}>Java Backend Developer</span>

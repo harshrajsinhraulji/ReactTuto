@@ -3,23 +3,10 @@ import React from 'react';
 import { FaJava, FaReact, FaDatabase, FaChessKnight, FaGamepad, FaVolleyballBall, FaYoutube, FaDiscord, FaBeer, FaMoneyBillWave, FaSmile } from 'react-icons/fa';
 import './About.css';
 
-const About = () => (
-  <section className="about-section">
-    <h2 className="section-title">About Me</h2>
+const About = ({ modalMode }) => (
+  <section className={modalMode ? 'about-section about-section-modal' : 'about-section'}>
+    {!modalMode && <h2 className="section-title">About Me</h2>}
     <div className="about-content">
-      <div className="about-summary-card">
-        <div className="about-summary-avatar">
-          <FaSmile className="about-summary-icon" />
-        </div>
-        <div className="about-summary-main">
-          <h3>Harshrajsinh Raulji</h3>
-          <div className="about-summary-title">Computer Engineering student @ ADIT</div>
-          <div className="about-summary-desc" style={{marginBottom: '1.2rem'}}>
-            I’m Harshrajsinh Raulji, a Computer Engineering student at AD Patel Institute of Technology, currently stuck in the degree I chose by accident (I heard it pays well, and here we are). Do I regret it? Pretty much every day. But since I’m here, I might as well turn it into something worthwhile—and hopefully profitable.<br/><br/>
-            My first project was a calculator in C. Instead of being proud, my reaction was: “WTF, I wanted to build an app with graphics, not this lame stuff.” That moment pushed me to chase bigger projects where the output doesn’t look like it belongs in a DOS museum.
-          </div>
-        </div>
-      </div>
       <div className="about-section-block">
         <strong>How I Work</strong>
         <ul className="about-list">
