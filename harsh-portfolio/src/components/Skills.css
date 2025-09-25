@@ -1,0 +1,93 @@
+.skills-section {
+  padding: 5rem 5%;
+  background-color: var(--light-gray);
+}
+.skills-tab-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  border: 1px solid var(--border-gray);
+}
+.skills-tabs {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  border-right: 1px solid var(--border-gray);
+  padding: 0.5rem;
+}
+.tab-button {
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--medium-gray);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+.tab-button:hover {
+  background-color: var(--light-gray);
+  color: var(--dark-gray);
+}
+.tab-button.active {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+.tab-button.active:hover {
+  background-color: #2563eb; /* Darker blue */
+}
+.tab-button svg {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  transition: transform 0.3s ease;
+}
+.tab-button:hover svg {
+  transform: scale(1.1);
+}
+.skills-tab-content {
+  padding: 2.5rem 3rem;
+  width: 100%;
+}
+.skill-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  animation: contentFadeIn 0.5s ease-in-out forwards;
+}
+.skill-points li {
+  font-size: 1.1rem;
+  color: var(--medium-gray);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  padding-left: 1.75rem;
+  position: relative;
+}
+.skill-points li::before {
+  content: '✓';
+  color: var(--primary-blue);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+@keyframes contentFadeIn {
+  from { opacity: 0; transform: scale(0.98) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+@media (max-width: 768px) {
+  .skills-tab-container { flex-direction: column; }
+  .skills-tabs { flex-direction: row; border-right: none; border-bottom: 1px solid var(--border-gray); overflow-x: auto; padding: 0.5rem; }
+  .tab-button { flex: 1; justify-content: center; padding: 0.75rem 1rem; margin-bottom: 0; }
+  .tab-button span { display: none; }
+  .tab-button.active { border-bottom: 4px solid var(--primary-blue); border-radius: 8px 8px 0 0; }
+}

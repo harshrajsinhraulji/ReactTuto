@@ -2,54 +2,75 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5rem 2rem;
-  min-height: 90vh; /* Takes up most of the viewport height */
-  background-color: #F7FAFC; /* Light gray background */
+  padding: 6rem 5%;
+  min-height: 90vh;
+  background-color: var(--light-gray);
 }
-
 .hero-content {
   max-width: 600px;
-  margin-right: 2rem;
+  margin-right: 4rem;
 }
-
-.hero-content h1 {
-  font-size: 3.5rem;
-  color: #2D3748; /* Dark Charcoal */
-  margin-bottom: 1rem;
+.hero-title {
+  font-size: 4rem; /* Larger title */
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--dark-gray);
+  margin-bottom: 1.5rem;
+  /* Gradient text effect */
+  background: linear-gradient(45deg, var(--dark-gray), var(--medium-gray));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-
 .hero-tagline {
   font-size: 1.25rem;
-  color: #4A5568; /* A slightly lighter gray */
-  line-height: 1.6;
-  margin-bottom: 2rem;
+  color: var(--medium-gray);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
 }
-
 .hero-button {
-  background-color: #4299E1; /* Cool Blue */
-  color: #FFFFFF;
+  background-color: var(--primary-blue);
+  color: var(--white);
   padding: 1rem 2rem;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 600;
   text-decoration: none;
   border-radius: 8px;
-  transition: background-color 0.3s ease;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2); /* Subtle blue glow */
 }
-
 .hero-button:hover {
-  background-color: #3182CE; /* A darker blue */
+  transform: translateY(-3px);
+  box-shadow: 0 7px 20px rgba(59, 130, 246, 0.3);
 }
-
 .hero-image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
 }
-
 .hero-image {
   width: 350px;
   height: 350px;
-  border-radius: 50%; /* Makes the image a circle */
-  object-fit: cover; /* Ensures the image covers the area without distortion */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--white);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+/* Animated glow effect behind the image */
+.hero-image-container::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--primary-blue), #93c5fd);
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(40px);
+  opacity: 0.4;
+  animation: pulse 4s infinite ease-in-out;
+}
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.05); }
 }

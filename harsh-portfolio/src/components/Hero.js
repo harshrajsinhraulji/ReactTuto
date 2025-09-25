@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-scroll';
 import './Hero.css';
-// Make sure this path and filename are correct for your photo
-import profilePic from '../assets/profile-photo.png'; 
+import profilePic from '../assets/profile-photo.png'; // Make sure your photo is a PNG and named correctly
 
 const Hero = () => {
   return (
@@ -11,7 +11,9 @@ const Hero = () => {
         <p className="hero-tagline">
           A passionate Computer Engineer crafting robust backend systems with Java and building seamless user experiences with React.
         </p>
-        <a href="#projects" className="hero-button">View My Work</a>
+        <Link to="projects" smooth={true} duration={500} className="hero-button">
+          View My Work
+        </Link>
       </div>
       <div className="hero-image-container">
         <img src={profilePic} alt="Harshrajsinh Raulji" className="hero-image"/>

@@ -1,15 +1,26 @@
 import React from 'react';
-import './Navbar.css'; // We will create this file next
+import { Link } from 'react-scroll';
+import './Navbar.css';
 
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <a href="#home" className="nav-logo">Harshrajsinh Raulji</a>
+      <Link to="home" smooth={true} duration={500} className="nav-logo" aria-label="Scroll to top">
+        Harshrajsinh Raulji
+      </Link>
       <ul className="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li>
+          <Link to="about" spy={true} smooth={true} duration={500}>About</Link>
+        </li>
+        <li>
+          <Link to="projects" spy={true} smooth={true} duration={500}>Projects</Link>
+        </li>
+        <li>
+          <Link to="skills" spy={true} smooth={true} duration={500}>Skills</Link>
+        </li>
+        <li>
+          <Link to="contact" spy={true} smooth={true} duration={500}>Contact</Link>
+        </li>
       </ul>
     </nav>
   );

@@ -1,45 +1,55 @@
-/* Basic styling for the navigation bar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #2D3748; /* Dark Charcoal */
-  padding: 1rem 2rem;
+  padding: 1.5rem 5%; /* Increased padding */
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  border-bottom: 1px solid var(--border-gray);
 }
-
-/* Styling for the logo/name on the left */
 .nav-logo {
   font-size: 1.5rem;
-  color: #FFFFFF;
-  font-weight: bold;
+  color: var(--dark-gray);
+  font-weight: 700; /* Bolder logo */
   text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
-
-/* Styling for the list of links */
+.nav-logo:hover {
+  color: var(--primary-blue);
+}
 .nav-links {
   display: flex;
-  list-style: none; /* Removes the bullet points */
+  list-style: none;
   margin: 0;
   padding: 0;
 }
-
 .nav-links li {
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
-
-/* Styling for the individual links */
 .nav-links a {
-  color: #F7FAFC; /* Light Gray/White */
+  color: var(--medium-gray);
   text-decoration: none;
   font-size: 1rem;
+  font-weight: 600; /* Bolder links */
+  cursor: pointer;
   transition: color 0.3s ease;
+  position: relative;
 }
-
-/* Change color on hover */
-.nav-links a:hover {
-  color: #4299E1; /* Cool Blue */
+/* Underline effect on hover */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--primary-blue);
+  transition: width 0.3s ease;
+}
+.nav-links a:hover::after {
+  width: 100%;
 }
