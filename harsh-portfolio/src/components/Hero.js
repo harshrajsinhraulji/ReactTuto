@@ -1,15 +1,41 @@
-import React from 'react';
+
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-scroll';
 import './Hero.css';
-import profilePic from '../assets/profile-photo.png'; // Make sure your photo is a PNG and named correctly
+import profilePic from '../assets/profile-photo.png';
+
+const dynamicTitles = [
+  'Java Backend Developer',
+  'React Frontend Enthusiast',
+  'Problem Solver',
+  'Tech Explorer',
+  'Team Player',
+];
+
 
 const Hero = () => {
+  const subtitleRef = useRef(null);
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      if (subtitleRef.current) {
+        subtitleRef.current.textContent = dynamicTitles[i % dynamicTitles.length];
+        i++;
+      }
+    }, 1800);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section id="home" className="hero-container">
+    <section id="home" className="hero-container hero-animate">
       <div className="hero-content">
-        <h1>Hi, I'm Harshrajsinh Raulji</h1>
+        <h1 className="hero-title">Hi, I'm <span className="hero-highlight">Harshrajsinh Raulji</span></h1>
+        <div className="hero-dynamic-subtitle">
+          <span ref={subtitleRef}>Java Backend Developer</span>
+        </div>
         <p className="hero-tagline">
-          A passionate Computer Engineer crafting robust backend systems with Java and building seamless user experiences with React.
+          I craft robust backend systems with <b>Java</b> and build seamless user experiences with <b>React</b>.<br/>
+          <span className="hero-summary">Always learning. Always building. Always collaborating.</span>
         </p>
         <Link to="projects" smooth={true} duration={500} className="hero-button">
           View My Work
@@ -17,6 +43,7 @@ const Hero = () => {
       </div>
       <div className="hero-image-container">
         <img src={profilePic} alt="Harshrajsinh Raulji" className="hero-image"/>
+        {/* 3D/animated element can be added here in the future */}
       </div>
     </section>
   );
