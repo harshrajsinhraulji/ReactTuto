@@ -8,71 +8,71 @@ import Tilt from 'react-parallax-tilt';
 
 import ResumeButton from './ResumeButton';
 
-const dynamicTitles = [
-  'Java Backend Developer',
-  'React Frontend Enthusiast',
-  'Problem Solver',
-  'Tech Explorer',
-  'Team Player',
+// Cinematic, personal opening lines for narrative effect
+const cinematicLines = [
+  'I turn late-night ideas into code that breathes.',
+  'Building digital worlds, one bug at a time.',
+  'Engineer. Storyteller. Reluctant morning person.',
+  'I don’t just ship features—I ship stories.',
+  'Welcome to my corner of the internet. It’s weird, it’s real, it’s me.'
 ];
 
 
 
 const Hero = ({ onNameClick }) => {
-  const subtitleRef = useRef(null);
+  const lineRef = useRef(null);
   useEffect(() => {
     let i = 0;
     const interval = setInterval(() => {
-      if (subtitleRef.current) {
-        subtitleRef.current.textContent = dynamicTitles[i % dynamicTitles.length];
+      if (lineRef.current) {
+        lineRef.current.textContent = cinematicLines[i % cinematicLines.length];
         i++;
       }
-    }, 1800);
+    }, 3200);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <section id="home" className="hero-container hero-animate">
       <div className="hero-content">
-        <h1 className="hero-title">
-          Hi, I'm{' '}
+        <h1 className="hero-title cinematic-title">
+          <span ref={lineRef}>{cinematicLines[0]}</span>
+        </h1>
+        <div className="hero-identity-row">
           <span
-            className="hero-highlight hero-name-fancy"
+            className="hero-highlight hero-name-fancy hero-name-cinematic"
             onClick={onNameClick}
             aria-label="Open About"
             tabIndex={0}
             role="button"
-            style={{cursor: 'pointer', fontWeight: 800, fontSize: 'inherit'}}
+            style={{cursor: 'pointer', fontWeight: 900, fontSize: '2.6rem', letterSpacing: '-1.5px'}}
             title="Click to know more about me!"
           >
             Harshrajsinh Raulji
           </span>
-        </h1>
-        <div className="hero-dynamic-subtitle">
-          <span ref={subtitleRef}>Java Backend Developer</span>
         </div>
-        <p className="hero-tagline">
-          I craft robust backend systems with <b>Java</b> and build seamless user experiences with <b>React</b>.<br/>
-          <span className="hero-summary">Always learning. Always building. Always collaborating.</span>
+        <p className="hero-tagline cinematic-tagline">
+          <span style={{fontWeight: 500, fontSize: '1.25rem', color: 'var(--primary-blue)'}}>I build digital experiences that feel alive.</span><br/>
+          <span style={{fontSize: '1.08rem', color: 'var(--medium-gray)'}}>Code is my paintbrush, the web is my canvas.<br/>Scroll to see my story.</span>
         </p>
         <ResumeButton />
-  <Link to="projects" smooth={true} duration={0} className="hero-button">
-          View My Work
+        <Link to="projects" smooth={true} duration={0} className="hero-button cinematic-cta">
+          Enter the Portfolio
         </Link>
       </div>
-      <div className="hero-image-container">
+      <div className="hero-image-container cinematic-image-container">
         <Tilt glareEnable={true} glareMaxOpacity={0.18} glareColor="#60a5fa" glarePosition="all" scale={1.07} transitionSpeed={1800} tiltMaxAngleX={18} tiltMaxAngleY={18} className="hero-tilt">
           <picture>
-            <source srcSet={require('../assets/profile-photo.webp').default || require('../assets/profile-photo.webp')} type="image/webp" />
+            <source srcSet={require('../assets/profile-photo.webp').default || require('../assets/profile-photo.png')} type="image/webp" />
             <img
               src={profilePic}
               srcSet={`${profilePic} 1x`}
               alt="Harshrajsinh Raulji"
-              className="hero-image"
+              className="hero-image cinematic-hero-image"
               width="320"
               height="320"
               loading="lazy"
-              style={{background:'#e0e7ff', border:'5px solid var(--white)'}}
+              style={{background:'#e0e7ff', border:'5px solid var(--white)', boxShadow:'0 0 0 12px #60a5fa22'}}
             />
           </picture>
         </Tilt>
