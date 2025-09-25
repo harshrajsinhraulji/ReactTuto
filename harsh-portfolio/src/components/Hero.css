@@ -66,22 +66,37 @@
   justify-content: center;
   animation: fadeIn 0.2s;
 }
+/* Modern glassy About modal, wider, scrollable, Wix Studio inspired */
 .about-modal {
-  background: var(--card-bg);
-  border-radius: 2rem 2rem 1.2rem 1.2rem;
-  box-shadow: 0 12px 48px 0 rgba(30,41,59,0.22);
-  padding: 0 0 2.2rem 0;
-  max-width: 700px;
-  min-width: 320px;
-  width: 96vw;
+  background: rgba(255,255,255,0.82);
+  -webkit-backdrop-filter: blur(24px) saturate(1.2);
+  backdrop-filter: blur(24px) saturate(1.2);
+  border-radius: 2.5rem;
+  box-shadow: 0 16px 64px 0 rgba(30,41,59,0.22), 0 2px 24px #60a5fa22;
+  padding: 0 0 2.7rem 0;
+  max-width: 900px;
+  min-width: 340px;
+  width: 98vw;
   max-height: 92vh;
   position: relative;
   animation: aboutSlideUp 0.44s cubic-bezier(.4,1.2,.6,1);
-  overflow: visible;
+  overflow: auto;
   border: 2.5px solid var(--primary-blue);
+  display: flex;
+  flex-direction: column;
+}
+[data-theme='dark'] .about-modal {
+  background: rgba(36, 39, 49, 0.92);
+  border: 2.5px solid var(--accent);
+  box-shadow: 0 16px 64px 0 #2563eb33, 0 2px 24px #2563eb22;
 }
 .about-modal::-webkit-scrollbar {
-  display: none;
+  width: 8px;
+  background: transparent;
+}
+.about-modal::-webkit-scrollbar-thumb {
+  background: var(--accent-light);
+  border-radius: 8px;
 }
 @keyframes aboutSlideUp {
   from { opacity: 0; transform: translateY(60px) scale(0.98); }
@@ -89,13 +104,14 @@
 }
 .about-modal-profile {
   display: flex;
-  align-items: center;
-  gap: 1.5rem;
+  align-items: flex-start;
+  gap: 2.2rem;
   background: linear-gradient(90deg, #e0e7ff 60%, var(--white) 100%);
-  border-radius: 2rem 2rem 0 0;
-  padding: 2.5rem 2.5rem 1.2rem 2.5rem;
-  box-shadow: 0 2px 16px rgba(59,130,246,0.07);
+  border-radius: 2.5rem 2.5rem 0 0;
+  padding: 3.2rem 3.2rem 1.7rem 3.2rem;
+  box-shadow: 0 2px 24px rgba(59,130,246,0.09);
   margin-bottom: 0.5rem;
+  min-width: 0;
 }
 .about-modal-avatar {
   width: 90px;
@@ -113,22 +129,25 @@
 }
 .about-modal-summary {
   flex: 1;
+  min-width: 0;
 }
 .about-modal-summary h3 {
   margin: 0 0 0.2rem 0;
-  font-size: 1.5rem;
+  font-size: 2.1rem;
   color: var(--dark-gray);
-  font-weight: 800;
+  font-weight: 900;
+  letter-spacing: -1px;
 }
 .about-modal-summary .about-summary-title {
-  font-size: 1.1rem;
+  font-size: 1.18rem;
   color: var(--primary-blue);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
 }
 .about-modal-summary .about-summary-desc {
-  font-size: 1.08rem;
+  font-size: 1.13rem;
   color: var(--medium-gray);
+  line-height: 1.8;
 }
 .about-modal-close {
   position: absolute;
@@ -136,14 +155,16 @@
   right: 1.1rem;
   background: none;
   border: none;
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--primary-blue);
   cursor: pointer;
   z-index: 10;
-  transition: color 0.2s;
+  transition: color 0.2s, filter 0.2s;
+  filter: drop-shadow(0 2px 8px #60a5fa33);
 }
 .about-modal-close:hover, .about-modal-close:focus {
   color: var(--accent);
+  filter: drop-shadow(0 4px 16px #3b82f655);
 }
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -152,6 +173,19 @@
 @keyframes modalPop {
   from { transform: scale(0.95) translateY(30px); opacity: 0; }
   to { transform: none; opacity: 1; }
+}
+
+@media (max-width: 900px) {
+  .about-modal {
+    max-width: 99vw;
+    padding: 0 0 1.2rem 0;
+  }
+  .about-modal-profile {
+    flex-direction: column;
+    align-items: center;
+    padding: 2.2rem 1.2rem 1.2rem 1.2rem;
+    gap: 1.2rem;
+  }
 }
 /* End of modal styles */
 .hero-dynamic-subtitle {

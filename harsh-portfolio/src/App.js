@@ -14,6 +14,7 @@ export const ThemeContext = createContext();
 
 
 
+
 function App() {
   const [aboutOpen, setAboutOpen] = useState(false);
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
@@ -23,6 +24,18 @@ function App() {
     document.body.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
   }, [theme]);
+
+  // Lock background scroll when modal is open
+  useEffect(() => {
+    if (aboutOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [aboutOpen]);
 
   // Fade-in on scroll for sections
   useEffect(() => {
