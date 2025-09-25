@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <nav className="navbar" role="navigation" aria-label="Main Navigation">
       <a href="#main-content" className="skip-link">Skip to main content</a>
-      <Link to="home" smooth={true} duration={500} className="nav-logo" aria-label="Scroll to top">
+  <Link to="home" smooth={true} duration={0} className="nav-logo" aria-label="Scroll to top">
         Harshrajsinh Raulji
       </Link>
       <button
@@ -31,16 +31,16 @@ const Navbar = () => {
       </button>
       <ul className={`nav-links${menuOpen ? ' open' : ''}`} id="nav-menu">
         <li>
-          <Link to="about" spy={true} smooth={true} duration={500} aria-label="About section" onClick={handleNavLinkClick}>About</Link>
+    <Link to="about" spy={true} smooth={true} duration={0} aria-label="About section" onClick={handleNavLinkClick}>About</Link>
         </li>
         <li>
-          <Link to="projects" spy={true} smooth={true} duration={500} aria-label="Projects section" onClick={handleNavLinkClick}>Projects</Link>
+    <Link to="projects" spy={true} smooth={true} duration={0} aria-label="Projects section" onClick={handleNavLinkClick}>Projects</Link>
         </li>
         <li>
-          <Link to="skills" spy={true} smooth={true} duration={500} aria-label="Skills section" onClick={handleNavLinkClick}>Skills</Link>
+    <Link to="skills" spy={true} smooth={true} duration={0} aria-label="Skills section" onClick={handleNavLinkClick}>Skills</Link>
         </li>
         <li>
-          <Link to="contact" spy={true} smooth={true} duration={500} aria-label="Contact section" onClick={handleNavLinkClick}>Contact</Link>
+    <Link to="contact" spy={true} smooth={true} duration={0} aria-label="Contact section" onClick={handleNavLinkClick}>Contact</Link>
         </li>
       </ul>
       <button

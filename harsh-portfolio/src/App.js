@@ -5,6 +5,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import profilePic from './assets/profile-photo.png';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Testimonials from './components/Testimonials';
@@ -70,10 +71,10 @@ function App() {
                 {aboutOpen && (
                   <div className="about-modal-overlay" onClick={() => setAboutOpen(false)}>
                     <div className="about-modal" onClick={e => e.stopPropagation()}>
-                      <button className="about-modal-close" onClick={() => setAboutOpen(false)} aria-label="Close About">×</button>
+                      <button className="about-modal-close sticky-close" onClick={() => setAboutOpen(false)} aria-label="Close About">×</button>
                       <div className="about-modal-profile">
                         <div className="about-modal-avatar">
-                          <span role="img" aria-label="Smile">😄</span>
+                          <img src={profilePic} alt="Harshrajsinh Raulji" style={{width:'100%',height:'100%',borderRadius:'50%',objectFit:'cover'}} />
                         </div>
                         <div className="about-modal-summary">
                           <h3>Harshrajsinh Raulji</h3>

@@ -56,7 +56,7 @@ const Hero = ({ onNameClick }) => {
           <span className="hero-summary">Always learning. Always building. Always collaborating.</span>
         </p>
         <ResumeButton />
-        <Link to="projects" smooth={true} duration={500} className="hero-button">
+  <Link to="projects" smooth={true} duration={0} className="hero-button">
           View My Work
         </Link>
       </div>
