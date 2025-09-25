@@ -76,8 +76,14 @@
   outline: none;
   background: none;
 }
+/* Improved dark mode nav link visibility */
 [data-theme='dark'] .nav-links a {
-  color: var(--white);
+  color: #e0e7ef;
+  text-shadow: 0 1px 8px #232946cc;
+}
+[data-theme='dark'] .nav-links a:hover, [data-theme='dark'] .nav-links a:focus {
+  color: #60a5fa;
+  background: #232946;
 }
 .nav-links a:hover, .nav-links a:focus {
   color: var(--primary-blue);
