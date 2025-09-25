@@ -15,6 +15,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
+  outline: none;
 }
 .btn:hover, .hero-button:hover, .resume-button:hover, .project-link:hover, .contact-btn:hover,
 .btn:focus, .hero-button:focus, .resume-button:focus, .project-link:focus, .contact-btn:focus {
@@ -22,6 +23,8 @@
   box-shadow: 0 10px 28px rgba(59, 130, 246, 0.22);
   background: linear-gradient(90deg, #2563eb, #60a5fa);
   color: var(--accent);
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
 }
 .btn:active, .hero-button:active, .resume-button:active, .project-link:active, .contact-btn:active {
   filter: brightness(0.98);

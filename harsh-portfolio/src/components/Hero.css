@@ -8,6 +8,10 @@
   position: relative;
   overflow: hidden;
 }
+/* Dark mode gradient improvement */
+[data-theme='dark'] .hero-container {
+  background: linear-gradient(120deg, #181a20 60%, #1e293b 100%);
+}
 .hero-animate {
   opacity: 0;
   transform: translateY(40px);
@@ -261,6 +265,11 @@
   border: 5px solid var(--white);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.13);
   background: var(--white);
+  transition: box-shadow 0.22s, border-color 0.22s;
+}
+.hero-image:focus {
+  outline: 3px solid var(--primary-blue);
+  outline-offset: 2px;
 }
 .hero-image-container::after {
   content: '';

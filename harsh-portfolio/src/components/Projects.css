@@ -5,7 +5,7 @@
   background: linear-gradient(120deg, var(--light-gray) 60%, #e0e7ff 100%);
 }
 [data-theme='dark'] .projects-section {
-  background: linear-gradient(120deg, #181a20 60%, #232946 100%);
+  background: linear-gradient(120deg, #181a20 60%, #1e293b 100%);
 }
 
 /* Scrollable modern projects row */

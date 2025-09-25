@@ -10,7 +10,7 @@
 }
 /* Dark mode gradient improvement */
 [data-theme='dark'] .skills-section {
-  background: linear-gradient(120deg, #181a20 60%, #232946 100%);
+  background: linear-gradient(120deg, #181a20 60%, #1e293b 100%);
 }
 .skills-section.visible {
   opacity: 1;

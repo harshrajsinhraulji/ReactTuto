@@ -63,15 +63,16 @@ const Hero = ({ onNameClick }) => {
       <div className="hero-image-container">
         <Tilt glareEnable={true} glareMaxOpacity={0.18} glareColor="#60a5fa" glarePosition="all" scale={1.07} transitionSpeed={1800} tiltMaxAngleX={18} tiltMaxAngleY={18} className="hero-tilt">
           <picture>
-            <source srcSet={require('../assets/profile-photo.webp')} type="image/webp" />
+            <source srcSet={require('../assets/profile-photo.webp').default || require('../assets/profile-photo.webp')} type="image/webp" />
             <img
               src={profilePic}
-              srcSet={`${profilePic} 1x, ${profilePic.replace('.png', '@2x.png')} 2x`}
+              srcSet={`${profilePic} 1x`}
               alt="Harshrajsinh Raulji"
               className="hero-image"
-              width="240"
-              height="240"
+              width="320"
+              height="320"
               loading="lazy"
+              style={{background:'#e0e7ff', border:'5px solid var(--white)'}}
             />
           </picture>
         </Tilt>
