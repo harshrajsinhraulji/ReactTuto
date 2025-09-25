@@ -1,3 +1,19 @@
+/* Theme toggle button */
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  color: var(--primary-blue);
+  font-size: 1.5rem;
+  margin-left: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+  outline: none;
+  display: flex;
+  align-items: center;
+}
+.theme-toggle-btn:hover, .theme-toggle-btn:focus {
+  color: var(--accent);
+}
 .navbar {
   display: flex;
   justify-content: space-between;

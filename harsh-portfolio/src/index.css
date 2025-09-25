@@ -16,6 +16,20 @@
   --text-secondary: #64748b;
 }
 
+[data-theme='dark'] {
+  --primary-blue: #60a5fa;
+  --primary: #60a5fa;
+  --accent: #fbbf24;
+  --accent-light: #374151;
+  --dark-gray: #f3f6fd;
+  --medium-gray: #cbd5e1;
+  --light-gray: #23232b;
+  --border-gray: #23232b;
+  --white: #18181b;
+  --card-bg: #23232b;
+  --text-secondary: #a3a3a3;
+}
+
 
 body {
   margin: 0;
