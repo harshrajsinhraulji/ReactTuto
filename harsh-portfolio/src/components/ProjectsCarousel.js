@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import PropTypes from 'prop-types';
 import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import './ProjectsCarousel.css';
 
@@ -47,4 +48,7 @@ const ProjectsCarousel = ({ projects }) => {
   );
 };
 
+ProjectsCarousel.propTypes = {
+  projects: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 export default ProjectsCarousel;

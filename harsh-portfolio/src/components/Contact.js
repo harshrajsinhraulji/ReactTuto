@@ -35,4 +35,5 @@ const Contact = () => {
   );
 };
 
+// No props to validate
 export default Contact;

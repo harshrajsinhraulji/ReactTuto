@@ -8,16 +8,28 @@ import './Navbar.css';
 
 const Navbar = () => {
   const { theme, setTheme } = useContext(ThemeContext);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleNavLinkClick = () => setMobileOpen(false);
+  const handleNavLinkClick = () => {
+    setMenuOpen(false);
+  };
 
   return (
     <nav className="navbar" role="navigation" aria-label="Main Navigation">
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       <Link to="home" smooth={true} duration={500} className="nav-logo" aria-label="Scroll to top">
         Harshrajsinh Raulji
       </Link>
-      <ul className={`nav-links${mobileOpen ? ' nav-links-mobile-open' : ''}`}>
+      <button
+        className="hamburger-btn"
+        aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+        aria-expanded={menuOpen}
+        aria-controls="nav-menu"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        {menuOpen ? <FaTimes /> : <FaBars />}
+      </button>
+      <ul className={`nav-links${menuOpen ? ' open' : ''}`} id="nav-menu">
         <li>
           <Link to="about" spy={true} smooth={true} duration={500} aria-label="About section" onClick={handleNavLinkClick}>About</Link>
         </li>
@@ -39,16 +51,9 @@ const Navbar = () => {
       >
         {theme === 'light' ? <FaMoon /> : <FaSun />}
       </button>
-      <button
-        className="mobile-menu-btn"
-        aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
-        onClick={() => setMobileOpen(!mobileOpen)}
-      >
-        {mobileOpen ? <FaTimes /> : <FaBars />}
-      </button>
-      {mobileOpen && <div className="nav-mobile-backdrop" onClick={() => setMobileOpen(false)} tabIndex={-1} aria-label="Close navigation menu" />}
     </nav>
   );
 };
 
+// No props to validate
 export default Navbar;

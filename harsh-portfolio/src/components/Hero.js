@@ -1,5 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-scroll';
 import './Hero.css';
 import profilePic from '../assets/profile-photo.png';
@@ -68,4 +69,7 @@ const Hero = ({ onNameClick }) => {
   );
 };
 
+Hero.propTypes = {
+  onNameClick: PropTypes.func.isRequired,
+};
 export default Hero;
