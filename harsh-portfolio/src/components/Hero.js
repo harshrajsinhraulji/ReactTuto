@@ -5,6 +5,8 @@ import './Hero.css';
 import profilePic from '../assets/profile-photo.png';
 import Tilt from 'react-parallax-tilt';
 
+import ResumeButton from './ResumeButton';
+
 const dynamicTitles = [
   'Java Backend Developer',
   'React Frontend Enthusiast',
@@ -52,6 +54,7 @@ const Hero = ({ onNameClick }) => {
           I craft robust backend systems with <b>Java</b> and build seamless user experiences with <b>React</b>.<br/>
           <span className="hero-summary">Always learning. Always building. Always collaborating.</span>
         </p>
+        <ResumeButton />
         <Link to="projects" smooth={true} duration={500} className="hero-button">
           View My Work
         </Link>
