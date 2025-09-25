@@ -56,6 +56,7 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
+      <a href="#main-content" className="skip-nav">Skip to main content</a>
       <div className="App">
         <Navbar />
         <Hero onNameClick={() => setAboutOpen(true)} />
@@ -81,10 +82,12 @@ function App() {
             </div>
           </div>
         )}
-  <Projects />
-  <Skills />
-  <Testimonials />
-  <Contact />
+        <main id="main-content">
+          <Projects />
+          <Skills />
+          <Testimonials />
+          <Contact />
+        </main>
       </div>
     </ThemeContext.Provider>
   );
