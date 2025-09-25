@@ -8,6 +8,7 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Testimonials from './components/Testimonials';
+import Blog from './components/Blog';
 import Contact from './components/Contact';
 import React, { useState, useEffect, createContext } from 'react';
 
@@ -84,6 +85,7 @@ function App() {
   <Projects />
   <Skills />
   <Testimonials />
+  <Blog />
   <Contact />
       </div>
     </ThemeContext.Provider>
