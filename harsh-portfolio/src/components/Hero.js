@@ -63,7 +63,7 @@ const Hero = ({ onNameClick }) => {
       <div className="hero-image-container cinematic-image-container">
         <Tilt glareEnable={true} glareMaxOpacity={0.18} glareColor="#60a5fa" glarePosition="all" scale={1.07} transitionSpeed={1800} tiltMaxAngleX={18} tiltMaxAngleY={18} className="hero-tilt">
           <picture>
-            <source srcSet={require('../assets/profile-photo.webp').default || require('../assets/profile-photo.png')} type="image/webp" />
+            <source srcSet={require('../assets/profile-photo.webp').default || require('../assets/profile-photo.webp')} type="image/webp" />
             <img
               src={profilePic}
               srcSet={`${profilePic} 1x`}
