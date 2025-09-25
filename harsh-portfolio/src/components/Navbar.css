@@ -2,24 +2,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 5%; /* Increased padding */
+  padding: 1.5rem 5%;
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent */
-  backdrop-filter: blur(10px); /* Frosted glass effect */
-  border-bottom: 1px solid var(--border-gray);
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1.5px solid var(--border-gray);
+  box-shadow: 0 2px 12px rgba(59,130,246,0.03);
 }
 .nav-logo {
   font-size: 1.5rem;
-  color: var(--dark-gray);
-  font-weight: 700; /* Bolder logo */
+  color: var(--primary-blue);
+  font-weight: 700;
   text-decoration: none;
   cursor: pointer;
   transition: color 0.3s ease;
+  letter-spacing: -0.5px;
 }
 .nav-logo:hover {
-  color: var(--primary-blue);
+  color: var(--accent);
 }
 .nav-links {
   display: flex;
@@ -30,15 +32,15 @@
 .nav-links li {
   padding: 0 1.5rem;
 }
-.nav-links a {
-  color: var(--medium-gray);
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 600; /* Bolder links */
-  cursor: pointer;
-  transition: color 0.3s ease;
-  position: relative;
-}
+  .nav-links a {
+    color: var(--dark-gray);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: relative;
+  }
 /* Underline effect on hover */
 .nav-links a::after {
   content: '';
@@ -52,4 +54,7 @@
 }
 .nav-links a:hover::after {
   width: 100%;
+}
+.nav-links a:focus {
+  color: var(--primary-blue);
 }

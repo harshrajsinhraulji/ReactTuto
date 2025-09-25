@@ -1,14 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+
 :root {
   /* Define our new color palette */
-  --primary-blue: #3B82F6;
+  --primary-blue: #2563eb;
+  --primary: #2563eb;
+  --accent: #3B82F6;
+  --accent-light: #e0e7ff;
   --dark-gray: #1F2937;
   --medium-gray: #4B5563;
   --light-gray: #F9FAFB;
   --border-gray: #E5E7EB;
   --white: #FFFFFF;
+  --card-bg: #fff;
+  --text-secondary: #64748b;
 }
+
 
 body {
   margin: 0;
@@ -19,6 +26,25 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--white);
   color: var(--medium-gray);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 700px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+*:focus {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+  transition: outline 0.2s;
 }
 
 /* General style for section titles */
@@ -28,4 +54,5 @@ body {
   color: var(--dark-gray);
   margin-bottom: 3rem;
   font-weight: 700;
+  letter-spacing: -1px;
 }
