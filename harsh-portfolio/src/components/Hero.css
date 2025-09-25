@@ -44,15 +44,12 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
-  border-bottom: 2.5px dashed var(--primary-blue);
-  padding-bottom: 2px;
-  transition: border-color 0.2s, color 0.2s, filter 0.2s;
   filter: drop-shadow(0 2px 8px #60a5fa33);
+  transition: filter 0.2s, color 0.2s;
+  cursor: pointer;
 }
 .hero-name-fancy:hover, .hero-name-fancy:focus {
-  border-bottom: 2.5px solid var(--accent);
-  filter: drop-shadow(0 4px 16px #3b82f655);
+  filter: drop-shadow(0 4px 16px #3b82f655) brightness(1.1);
 }
 
 /* About modal styles */
