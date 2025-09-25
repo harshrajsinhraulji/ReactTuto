@@ -1,91 +1,50 @@
 
-/* ...existing code... */
-.projects-section {
-  padding: 60px 0 40px 0;
-  background: var(--background);
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s cubic-bezier(.4,1.2,.6,1), transform 0.8s cubic-bezier(.4,1.2,.6,1);
-}
 /* Section background for depth */
 .projects-section {
   padding: 5rem 5%;
   background: linear-gradient(120deg, var(--light-gray) 60%, #e0e7ff 100%);
 }
 
-.projects-list {
+/* Scrollable modern projects row */
+.projects-scroll {
   display: flex;
   flex-wrap: wrap;
-  gap: 2.7rem;
+  gap: 2.2rem;
   justify-content: center;
+  margin-top: 2.5rem;
 }
 
-/* Modern glassy card look */
-.project-card {
+/* Modern glassy minimal card look */
+.project-card-minimal {
   background: rgba(255,255,255,0.82);
   -webkit-backdrop-filter: blur(18px) saturate(1.1);
   backdrop-filter: blur(18px) saturate(1.1);
-  border-radius: 1.7rem;
+  border-radius: 1.5rem;
   box-shadow: 0 8px 40px 0 #60a5fa18, 0 2px 12px #2563eb11;
-  padding: 2.5rem 2.2rem 2.5rem 2.2rem;
-  max-width: 390px;
-  min-width: 260px;
+  padding: 2.1rem 1.7rem 2.1rem 1.7rem;
+  max-width: 350px;
+  min-width: 220px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.3rem;
+  gap: 1.1rem;
   border: 1.5px solid var(--border-gray);
   transition: box-shadow 0.22s, border-color 0.22s, transform 0.22s, background 0.22s;
   position: relative;
 }
-[data-theme='dark'] .project-card {
+[data-theme='dark'] .project-card-minimal {
   background: rgba(36, 39, 49, 0.92);
   border: 1.5px solid var(--primary-blue);
   box-shadow: 0 8px 40px 0 #2563eb33, 0 2px 12px #2563eb22;
 }
-.project-card:hover, .project-card:focus {
+.project-card-minimal:hover, .project-card-minimal:focus {
   box-shadow: 0 16px 64px 0 #60a5fa33, 0 4px 24px #2563eb22;
   border-color: var(--primary-blue);
   transform: translateY(-6px) scale(1.035);
   background: rgba(255,255,255,0.96);
 }
-[data-theme='dark'] .project-card:hover, [data-theme='dark'] .project-card:focus {
+[data-theme='dark'] .project-card-minimal:hover, [data-theme='dark'] .project-card-minimal:focus {
   background: rgba(36, 39, 49, 0.98);
-}
-.project-title {
-  font-size: 1.32rem;
-  font-weight: 800;
-  color: var(--primary-blue);
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.5px;
-}
-.project-desc {
-  color: var(--medium-gray);
-  font-size: 1.09rem;
-  margin-bottom: 1.1rem;
-  line-height: 1.7;
-}
-.project-links {
-  display: flex;
-  gap: 1.2rem;
-  margin-top: 0.7rem;
-}
-.project-link {
-  color: var(--primary-blue);
-  font-weight: 700;
-  text-decoration: none;
-  transition: color 0.2s, text-shadow 0.2s;
-  font-size: 1.09rem;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  border-radius: 6px;
-  padding: 0.3rem 0.7rem;
-}
-.project-link:hover, .project-link:focus {
-  color: var(--accent);
-  text-shadow: 0 2px 8px #3b82f655;
-  background: var(--accent-light);
 }
 @media (max-width: 900px) {
   .projects-list {

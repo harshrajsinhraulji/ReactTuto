@@ -8,17 +8,23 @@ const Projects = () => {
   const GITHUB_USERNAME = "harshrajsinhraulji";
 
   useEffect(() => {
-    fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&direction=desc`)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        setRepos(data.slice(0, 6));
-      })
-      .catch(error => console.error("Error fetching GitHub repos:", error));
+    let intervalId;
+    const fetchRepos = () => {
+      fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&direction=desc`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          setRepos(data.slice(0, 6));
+        })
+        .catch(error => console.error("Error fetching GitHub repos:", error));
+    };
+    fetchRepos();
+    intervalId = setInterval(fetchRepos, 60000); // Poll every 60 seconds
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
@@ -27,6 +33,8 @@ const Projects = () => {
       <div className="projects-scroll">
         {repos.length === 0 ? (
           <p style={{ textAlign: 'center', width: '100%' }}>Loading repositories...</p>
+        ) : repos.filter(Boolean).length === 0 ? (
+          <p style={{ textAlign: 'center', width: '100%' }}>No public repositories found.</p>
         ) : (
           repos.map(repo => (
             <div className="project-card-minimal hover-pop" key={repo.id}>
