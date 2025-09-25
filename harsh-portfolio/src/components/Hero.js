@@ -13,7 +13,8 @@ const dynamicTitles = [
 ];
 
 
-const Hero = () => {
+
+const Hero = ({ onNameClick }) => {
   const subtitleRef = useRef(null);
   useEffect(() => {
     let i = 0;
@@ -29,7 +30,17 @@ const Hero = () => {
   return (
     <section id="home" className="hero-container hero-animate">
       <div className="hero-content">
-        <h1 className="hero-title">Hi, I'm <span className="hero-highlight">Harshrajsinh Raulji</span></h1>
+        <h1 className="hero-title">
+          Hi, I'm{' '}
+          <button
+            className="hero-highlight hero-name-btn"
+            onClick={onNameClick}
+            aria-label="Open About"
+            tabIndex={0}
+          >
+            Harshrajsinh Raulji
+          </button>
+        </h1>
         <div className="hero-dynamic-subtitle">
           <span ref={subtitleRef}>Java Backend Developer</span>
         </div>
