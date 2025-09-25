@@ -1,127 +1,98 @@
-import React, { useState } from 'react';
-// Import all the necessary icons
-import { FaJava, FaReact, FaCertificate, FaUsers } from 'react-icons/fa';
-import { VscTerminalCmd } from 'react-icons/vsc';
-import { HiLightBulb } from 'react-icons/hi';
+import React from 'react';
+import { FaJava, FaReact, FaUsers, FaDatabase, FaBug, FaChessKnight, FaCloud, FaCodeBranch } from 'react-icons/fa';
 import './Skills.css';
 
 // We keep the same data structure
 const skillsData = [
   {
-    category: "Programming & Core CS",
+    category: "Java & OOP",
     icon: <FaJava />,
-    points: [
-      "Proficient in Java (OOP, JDBC, Exception Handling)",
-      "Strong foundation in Data Structures & Algorithms",
-      "Skilled in C for procedural programming",
-      "Working knowledge of Python for scripting",
-      "Object-Oriented Design & Patterns"
-    ],
-    badges: ["Java", "C", "Python", "OOP", "DSA"]
+    level: 95,
+    color: "#f59e42",
+    badges: ["Java", "OOP", "JDBC"],
+    desc: "Robust backend systems, OOP, JDBC, Exception Handling"
   },
   {
-    category: "Web & Database",
+    category: "React & Frontend",
     icon: <FaReact />,
-    points: [
-      "Front-end with React and modern JavaScript",
-      "Backend integration with Java (Servlets, JSP, JDBC)",
-      "Strong SQL skills (CRUD, Transactions, Batch Ops)",
-      "Experience with both CLI and web applications",
-      "REST APIs & JSON"
-    ],
-    badges: ["React", "JavaScript", "SQL", "JDBC", "APIs"]
+    level: 90,
+    color: "#3B82F6",
+    badges: ["React", "JS", "SPA"],
+    desc: "Modern UIs, SPA, hooks, state management"
   },
   {
-    category: "Tools & Platforms",
-    icon: <VscTerminalCmd />,
-    points: [
-      "Version control with Git and GitHub",
-      "IDEs: IntelliJ IDEA, Eclipse, VS Code",
-      "Comfortable with command-line workflows",
-      "Exposure to AI/ML, Cloud, and Cybersecurity concepts",
-      "Linux & Windows environments"
-    ],
-    badges: ["Git", "VS Code", "Linux", "Cloud"]
+    category: "SQL & Databases",
+    icon: <FaDatabase />,
+    level: 85,
+    color: "#10b981",
+    badges: ["SQL", "JDBC", "DB Design"],
+    desc: "CRUD, transactions, schema design, batch ops"
   },
   {
-    category: "Development & Methodology",
-    icon: <HiLightBulb />,
-    points: [
-      "Effective AI Prompt Engineering for code generation & debugging",
-      "Intuitive, iterative development and problem-solving",
-      "Quick adoption of feedback to refine project features",
-      "Strong ability to debug based on symptoms and error logs",
-      "Agile, teamwork, and communication"
-    ],
-    badges: ["Agile", "Debugging", "Teamwork", "Communication"]
+    category: "Cloud & DevOps",
+    icon: <FaCloud />,
+    level: 70,
+    color: "#6366f1",
+    badges: ["Cloud", "Linux", "CI/CD"],
+    desc: "Linux, cloud basics, CI/CD, deployment"
   },
   {
-    category: "Certifications & Achievements",
-    icon: <FaCertificate />,
-    points: [
-      "Java Programming Certificate (Coursera)",
-      "SQL for Data Science (Coursera)",
-      "Hackathon finalist & coding contest participant",
-      "Chess club member & game dev hobbyist"
-    ],
-    badges: ["Certified", "Hackathon", "Chess", "Game Dev"]
+    category: "Version Control",
+    icon: <FaCodeBranch />,
+    level: 90,
+    color: "#6366f1",
+    badges: ["Git", "GitHub"],
+    desc: "Git, GitHub, branching, PRs, teamwork"
   },
   {
-    category: "Soft Skills & Fun Facts",
+    category: "Debugging & Testing",
+    icon: <FaBug />,
+    level: 80,
+    color: "#f43f5e",
+    badges: ["Debugging", "Testing"],
+    desc: "Debugging, troubleshooting, test writing"
+  },
+  {
+    category: "Soft Skills",
     icon: <FaUsers />,
-    points: [
-      "Multilingual: English, Hindi, Gujarati",
-      "Excellent communication & presentation",
-      "Creative, detail-oriented, and quick to adapt",
-      "Enjoys chess, gaming, and learning new tech"
-    ],
-    badges: ["Multilingual", "Creative", "Adaptable", "Chess"]
-  }
+    level: 95,
+    color: "#f59e42",
+    badges: ["Teamwork", "Communication", "Adaptable"],
+    desc: "Collaboration, communication, adaptability, creativity"
+  },
+  {
+    category: "Chess & Fun",
+    icon: <FaChessKnight />,
+    level: 80,
+    color: "#a3a3a3",
+    badges: ["Chess", "Game Dev"],
+    desc: "Chess club, game dev hobbyist, creative problem-solving"
+  },
 ];
 
-const Skills = () => {
-  // 'useState' to keep track of the selected tab. 'Programming & Core CS' is the default.
-  const [activeTab, setActiveTab] = useState(skillsData[0].category);
 
+const Skills = () => {
   return (
     <section id="skills" className="skills-section">
-      <h2 className="skills-title">Technical Expertise</h2>
-      <div className="skills-tab-container">
-        {/* These are the buttons to switch tabs */}
-        <div className="skills-tabs">
-          {skillsData.map((skill, index) => (
-            <button
-              key={index}
-              className={`tab-button ${activeTab === skill.category ? 'active' : ''}`}
-              onClick={() => setActiveTab(skill.category)}
-            >
-              {skill.icon}
-              <span>{skill.category}</span>
-            </button>
-          ))}
-        </div>
-
-        {/* This is the content that changes based on the active tab */}
-        <div className="skills-tab-content">
-          {skillsData.map((skill, index) => (
-            activeTab === skill.category && (
-              <div key={index}>
-                <ul className="skill-points">
-                  {skill.points.map((point, i) => (
-                    <li key={i}>{point}</li>
-                  ))}
-                </ul>
-                {skill.badges && (
-                  <div className="skills-badges">
-                    {skill.badges.map((badge, i) => (
-                      <span className="skills-badge" key={i}>{badge}</span>
-                    ))}
-                  </div>
-                )}
-              </div>
-            )
-          ))}
-        </div>
+      <h2 className="skills-title">Tech Stack & Skills</h2>
+      <div className="skills-grid">
+        {skillsData.map((skill, idx) => (
+          <div className="skill-card" key={idx} style={{animationDelay: `${0.1 * idx}s`}}>
+            <div className="skill-card-header">
+              <span className="skill-card-icon" style={{color: skill.color}}>{skill.icon}</span>
+              <span className="skill-card-title">{skill.category}</span>
+            </div>
+            <div className="skill-card-desc">{skill.desc}</div>
+            <div className="skill-card-progress">
+              <div className="skill-card-progress-bar" style={{width: `${skill.level}%`, background: skill.color}}></div>
+            </div>
+            <div className="skills-badges">
+              {skill.badges.map((badge, i) => (
+                <span className="skills-badge" key={i}>{badge}</span>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
