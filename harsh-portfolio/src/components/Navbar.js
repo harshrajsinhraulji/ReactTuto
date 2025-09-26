@@ -17,8 +17,9 @@ const Navbar = () => {
   return (
     <nav className="navbar" role="navigation" aria-label="Main Navigation">
       <a href="#main-content" className="skip-link">Skip to main content</a>
-  <Link to="home" smooth={true} duration={0} className="nav-logo" aria-label="Scroll to top">
-        Harshrajsinh Raulji
+      <Link to="home" smooth={true} duration={0} className="nav-logo" aria-label="Scroll to top">
+        <img src={require('../assets/logo.svg').default || require('../assets/logo.svg')} alt="HR Logo" style={{height: '2.1rem', width: '2.1rem', verticalAlign: 'middle', marginRight: '0.7rem'}} />
+        <span className="nav-logo-text" style={{fontWeight: 800, fontSize: '1.2rem', letterSpacing: '-1px'}}>Harshrajsinh Raulji</span>
       </Link>
       <button
         className="hamburger-btn"

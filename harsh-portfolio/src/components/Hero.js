@@ -35,6 +35,14 @@ const Hero = ({ onNameClick }) => {
   return (
     <section id="home" className="hero-container hero-animate">
       <div className="hero-content">
+        {/* Short video intro for personal branding */}
+        <div style={{display:'flex', justifyContent:'center', marginBottom:'1.2rem'}}>
+          <video width="120" height="120" style={{borderRadius:'50%', boxShadow:'0 2px 16px #2563eb22'}} autoPlay loop muted playsInline poster={profilePic}>
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+            {/* Replace the above src with your own intro video for production! */}
+            Your browser does not support the video tag.
+          </video>
+        </div>
         <h1 className="hero-title cinematic-title">
           <span ref={lineRef}>{cinematicLines[0]}</span>
         </h1>

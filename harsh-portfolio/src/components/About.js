@@ -6,6 +6,15 @@ import './About.css';
 const About = ({ modalMode }) => (
   <section className={modalMode ? 'about-section about-section-modal' : 'about-section'}>
     {!modalMode && <h2 className="section-title">About Me</h2>}
+    {!modalMode && (
+      <div className="about-intro" style={{textAlign:'center', marginBottom:'2.2rem'}}>
+        <img src={require('../assets/logo.svg').default || require('../assets/logo.svg')} alt="HR Logo" style={{height:'2.5rem', marginBottom:'0.5rem'}} />
+        <p style={{fontSize:'1.18rem', maxWidth:540, margin:'0 auto', color:'var(--medium-gray)'}}>
+          Hi, I’m Harshrajsinh Raulji—a pragmatic engineer, creative problem solver, and a believer in progress over perfection. I love building things that matter, learning from every bug, and sharing my journey with a bit of humor. Welcome to my digital home!
+        </p>
+        <div style={{fontFamily:'cursive', fontSize:'1.3rem', color:'var(--primary-blue)', marginTop:'0.7rem'}}>— Harshraj</div>
+      </div>
+    )}
     <div className="about-content">
       <div className="about-section-block">
         <strong>How I Work</strong>
